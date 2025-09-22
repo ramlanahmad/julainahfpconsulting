@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Takaful Agency — Lindungi Keluarga Anda</title>
+  <meta name="description" content="Takaful agency landing – hibah, medical card, education plan. Dapatkan konsultasi percuma."/>
+  <!-- Tailwind via CDN (for quick free deploy) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html{scroll-behavior:smooth}
+    .nav-active{color:#22d3ee}
+    .shadow-soft{box-shadow:0 10px 25px -10px rgba(0,0,0,.25)}
+    .glass{background:rgba(15,23,42,.72);backdrop-filter:saturate(180%) blur(8px)}
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <!-- Header -->
+  <header id="top" class="fixed inset-x-0 top-0 z-40 glass border-b border-slate-800">
+    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center gap-6">
+      <a href="#top" class="font-semibold tracking-tight">Your Takaful Agency</a>
+      <nav class="hidden md:flex items-center gap-5 text-sm">
+        <a href="#servis" class="hover:text-cyan-300">Servis</a>
+        <a href="#kisah" class="hover:text-cyan-300">Kisah Tuntutan</a>
+        <a href="#pelan" class="hover:text-cyan-300">Pelan</a>
+        <a href="#kenapa" class="hover:text-cyan-300">Kenapa Kami</a>
+        <a href="#sertai" class="hover:text-cyan-300">Sertai Agen</a>
+        <a href="#faq" class="hover:text-cyan-300">FAQ</a>
+        <a href="#hubungi" class="hover:text-cyan-300">Hubungi</a>
+      </nav>
+      <a href="#hubungi" class="ml-auto inline-flex items-center rounded-xl bg-cyan-500 px-4 py-2 text-sm font-medium text-slate-900 hover:bg-cyan-400">Konsultasi Percuma</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,.25),transparent_35%),radial-gradient(circle_at_80%_0,rgba(168,85,247,.18),transparent_40%)]">
+    <div class="mx-auto max-w-6xl px-4 pt-28 pb-16 grid lg:grid-cols-2 gap-8 items-center">
+      <div>
+        <h1 class="text-3xl md:text-5xl font-bold leading-tight">Perlindungan Takaful Untuk Keluarga & Masa Depan Anda</h1>
+        <p class="mt-4 text-slate-300">Hibah • Medical Card • Pendidikan • Perlindungan Pendapatan. Dapatkan cadangan pelan yang sesuai dalam 15 minit.</p>
+        <div class="mt-6 flex gap-3">
+          <a href="#hubungi" class="rounded-xl bg-cyan-500 px-5 py-3 font-semibold text-slate-900 hover:bg-cyan-400">Mula Sekarang</a>
+          <a href="#servis" class="rounded-xl border border-slate-700 px-5 py-3 font-semibold hover:bg-slate-900/40">Lihat Servis</a>
+        </div>
+        <div class="mt-6 flex items-center gap-4 text-xs text-slate-400">
+          <span class="inline-flex items-center gap-1">★★★★☆ 4.9/5</span>
+          <span>Dipercayai 1,200+ keluarga</span>
+        </div>
+      </div>
+      <div class="rounded-3xl border border-slate-800 shadow-soft p-5 bg-gradient-to-br from-slate-900 to-slate-800">
+        <div class="text-sm text-slate-300 mb-3">Kira Anggaran Sumbangan</div>
+        <form id="calc" class="grid grid-cols-2 gap-3 text-sm">
+          <input class="col-span-2 rounded-xl border border-slate-700 bg-slate-900 px-4 py-2" placeholder="Umur (tahun)" type="number" min="18" max="70" id="age" />
+          <select id="plan" class="col-span-2 rounded-xl border border-slate-700 bg-slate-900 px-4 py-2">
+            <option value="">Pilih Pelan</option>
+            <option>Hibah Keluarga</option>
+            <option>Medical Card</option>
+            <option>Pendidikan</option>
+            <option>Perlindungan Pendapatan</option>
+          </select>
+          <input class="col-span-2 rounded-xl border border-slate-700 bg-slate-900 px-4 py-2" placeholder="Anggaran Perlindungan (RM)" type="number" id="coverage" />
+          <button type="button" id="calcBtn" class="col-span-2 mt-1 rounded-xl bg-cyan-500 px-4 py-2 font-semibold text-slate-900 hover:bg-cyan-400">Kira</button>
+          <div id="calcOut" class="col-span-2 text-xs text-emerald-400 hidden">Anggaran sumbangan bulanan: <b id="prem"></b></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servis (Portlet) -->
+  <section id="servis" class="mx-auto max-w-6xl px-4 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold">Servis Kami</h2>
+    <p class="mt-2 text-slate-300">Pilih keperluan anda — kami sediakan cadangan pelan yang sesuai.</p>
+    <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="rounded-2xl border border-slate-800 p-5 bg-slate-900/60">
+        <h3 class="font-semibold">Hibah Takaful</h3>
+        <p class="text-sm text-slate-400 mt-2">Wariskan kasih sayang, bukan beban hutang.</p>
+      </div>
+      <div class="rounded-2xl border border-slate-800 p-5 bg-slate-900/60">
+        <h3 class="font-semibold">Medical Card</h3>
+        <p class="text-sm text-slate-400 mt-2">Akses rawatan swasta tanpa risau bil.</p>
+      </div>
+      <div class="rounded-2xl border border-slate-800 p-5 bg-slate-900/60">
+        <h3 class="font-semibold">Pendidikan Anak</h3>
+        <p class="text-sm text-slate-400 mt-2">Rancang dana pendidikan sejak awal.</p>
+      </div>
+      <div class="rounded-2xl border border-slate-800 p-5 bg-slate-900/60">
+        <h3 class="font-semibold">Pendapatan & Bisnes</h3>
+        <p class="text-sm text-slate-400 mt-2">Lindungi aliran tunai keluarga & syarikat.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kisah tuntutan -->
+  <section id="kisah" class="bg-slate-900/40 border-y border-slate-800">
+    <div class="mx-auto max-w-6xl px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold">Kisah Tuntutan Sebenar</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-4 text-sm">
+        <article class="rounded-2xl border border-slate-800 p-5">
+          <h3 class="font-semibold">Suri Rumah, 38 — Kanser</h3>
+          <p class="mt-2 text-slate-300">Kad perubatan melindungi bil RM78,000. Suami kekal fokus pada penjagaan anak-anak.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-800 p-5">
+          <h3 class="font-semibold">Eksekutif, 29 — Kemalangan</h3>
+          <p class="mt-2 text-slate-300">Hibah RM300,000 memperkukuh masa depan keluarga muda.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-800 p-5">
+          <h3 class="font-semibold">Usahawan, 41 — ICU</h3>
+          <p class="mt-2 text-slate-300">Simpanan + pendapatan gantian tampung operasi bisnes 3 bulan.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pelan (cards) -->
+  <section id="pelan" class="mx-auto max-w-6xl px-4 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold">Pelan Popular</h2>
+    <div class="mt-8 grid md:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-slate-800 p-6 bg-slate-900/60">
+        <h3 class="font-semibold">Starter Family</h3>
+        <p class="text-sm text-slate-400">Perlindungan asas + hibah permulaan.</p>
+        <ul class="mt-3 text-sm list-disc list-inside text-slate-300">
+          <li>Hibah RM100k</li>
+          <li>Medical card asas</li>
+          <li>Elaun hospital</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-slate-800 p-6 bg-slate-900/60 ring-2 ring-cyan-500/40">
+        <h3 class="font-semibold">Balanced Care</h3>
+        <p class="text-sm text-slate-400">Perlindungan seimbang untuk keluarga bekerja.</p>
+        <ul class="mt-3 text-sm list-disc list-inside text-slate-300">
+          <li>Hibah RM300k</li>
+          <li>Medical card komprehensif</li>
+          <li>Income protection</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-slate-800 p-6 bg-slate-900/60">
+        <h3 class="font-semibold">Executive Plus</h3>
+        <p class="text-sm text-slate-400">Limit rawatan tinggi + hibah besar.</p>
+        <ul class="mt-3 text-sm list-disc list-inside text-slate-300">
+          <li>Hibah RM500k+</li>
+          <li>Limit tahunan premium</li>
+          <li>Critical illness rider</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kenapa Kami -->
+  <section id="kenapa" class="bg-slate-900/40 border-y border-slate-800">
+    <div class="mx-auto max-w-6xl px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold">Kenapa Pilih Kami</h2>
+      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+        <div class="rounded-2xl border border-slate-800 p-5"><div class="font-semibold">Penasihat Bertauliah</div><p class="mt-2 text-slate-300">Dilatih khusus untuk keperluan keluarga Malaysia.</p></div>
+        <div class="rounded-2xl border border-slate-800 p-5"><div class="font-semibold">Banding & Sesuai</div><p class="mt-2 text-slate-300">Cadangan berdasarkan bajet & risiko anda.</p></div>
+        <div class="rounded-2xl border border-slate-800 p-5"><div class="font-semibold">Proses Pantas</div><p class="mt-2 text-slate-300">WhatsApp-first + e-sign, tanpa kertas.</p></div>
+        <div class="rounded-2xl border border-slate-800 p-5"><div class="font-semibold">Sokongan Tuntutan</div><p class="mt-2 text-slate-300">Kami bimbing urusan tuntutan dari A–Z.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sertai Agen -->
+  <section id="sertai" class="mx-auto max-w-6xl px-4 py-16">
+    <div class="grid lg:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-bold">Sertai Pasukan Agen</h2>
+        <p class="mt-2 text-slate-300">Latihan, skrip jualan, lead support. Jana kerjaya bermakna sambil membantu keluarga lain.</p>
+        <ul class="mt-4 text-sm list-disc list-inside text-slate-300">
+          <li>Coaching mingguan</li>
+          <li>Template iklan & funnel</li>
+          <li>Komisen & fast-track</li>
+        </ul>
+      </div>
+      <div class="rounded-3xl border border-slate-800 p-6 bg-slate-900/60">
+        <form id="agentForm" class="grid gap-3 text-sm">
+          <input name="name" class="rounded-xl border border-slate-700 bg-slate-900 px-4 py-2" placeholder="Nama penuh"/>
+          <input name="phone" class="rounded-xl border border-slate-700 bg-slate-900 px-4 py-2" placeholder="No. telefon"/>
+          <input name="city" class="rounded-xl border border-slate-700 bg-slate-900 px-4 py-2" placeholder="Lokasi (bandar)"/>
+          <button type="submit" class="rounded-xl bg-cyan-500 px-4 py-2 font-semibold text-slate-900 hover:bg-cyan-400">Mohon Agen</button>
+          <p id="agentOut" class="hidden text-xs text-emerald-400">Terima kasih! Kami akan hubungi anda.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="bg-slate-900/40 border-y border-slate-800">
+    <div class="mx-auto max-w-6xl px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold">Soalan Lazim</h2>
+      <div class="mt-6 space-y-4 text-sm">
+        <details class="rounded-2xl border border-slate-800 p-4">
+          <summary class="cursor-pointer font-medium">Apa beza hibah, wasiat, dan takaful?</summary>
+          <p class="mt-2 text-slate-300">Hibah takaful ialah pemberian manfaat perlindungan kepada waris; ia bergerak lebih pantas berbanding wasiat dan pembahagian harta biasa.</p>
+        </details>
+        <details class="rounded-2xl border border-slate-800 p-4">
+          <summary class="cursor-pointer font-medium">Berapakah bajet minima?</summary>
+          <p class="mt-2 text-slate-300">Ramai klien bermula sekitar RM100–RM250/bulan bergantung umur, pelan dan perlindungan.</p>
+        </details>
+        <details class="rounded-2xl border border-slate-800 p-4">
+          <summary class="cursor-pointer font-medium">Bagaimana proses tuntutan?</summary>
+          <p class="mt-2 text-slate-300">Kami urus semakan dokumen, hantar tuntutan dan follow‑up sehingga selesai.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hubungi (Lead Form) -->
+  <section id="hubungi" class="mx-auto max-w-6xl px-4 py-16">
+    <div class="grid lg:grid-cols-2 gap-8 items-start">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-bold">Dapatkan Konsultasi Percuma</h2>
+        <p class="mt-2 text-slate-300">Isi borang, kami akan hubungi dalam 24 jam.
+        </p>
+        <div class="mt-6 text-sm text-slate-400">
+          <p>WhatsApp: <a class="text-cyan-300 underline" id="waLink" href="#">+60 12‑345 6789</a></p>
+          <p class="mt-1">Emel: <a class="text-cyan-300 underline" href="mailto:info@youragency.com">info@youragency.com</a></p>
+        </div>
+      </div>
+      <div class="rounded-3xl border border-slate-800 p-6 bg-slate-900/60">
+        <!-- Replace the action with your Google Form action URL for 100% free submission -->
+        <form id="leadForm" class="grid gap-3 text-sm">
+          <input name="name" class="rounded-xl border border-slate-700 bg-slate-900 px-4 py-2" placeholder="Nama penuh" required />
+          <input name="phone" class="rounded-xl border border-slate-700 bg-slate-900 px-4 py-2" placeholder="No. telefon" required />
+          <input name="email" class="rounded-xl border border-slate-700 bg-slate-900 px-4 py-2" placeholder="Emel (optional)" type="email" />
+          <select name="plan" class="rounded-xl border border-slate-700 bg-slate-900 px-4 py-2" required>
+            <option value="">Pilih pelan</option>
+            <option>Hibah Keluarga</option>
+            <option>Medical Card</option>
+            <option>Pendidikan</option>
+            <option>Perlindungan Pendapatan</option>
+          </select>
+          <textarea name="note" class="rounded-xl border border-slate-700 bg-slate-900 px-4 py-2" placeholder="Catatan / Keperluan"></textarea>
+          <!-- Hidden UTM fields (auto-filled) -->
+          <input type="hidden" name="utm_source" />
+          <input type="hidden" name="utm_medium" />
+          <input type="hidden" name="utm_campaign" />
+          <input type="hidden" name="utm_content" />
+          <input type="hidden" name="utm_term" />
+          <button class="rounded-xl bg-cyan-500 px-4 py-2 font-semibold text-slate-900 hover:bg-cyan-400">Hantar</button>
+          <p id="leadOut" class="hidden text-xs text-emerald-400">Terima kasih! Kami terima maklumat anda.</p>
+        </form>
+        <p class="mt-2 text-[11px] text-slate-400">Dengan menghantar, anda bersetuju untuk dihubungi melalui WhatsApp/telefon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800">
+    <div class="mx-auto max-w-6xl px-4 py-10 text-xs text-slate-400">
+      © <span id="yr"></span> Your Takaful Agency • Semua hak terpelihara • <a href="#top" class="underline">Kembali ke atas</a>
+    </div>
+  </footer>
+
+  <script>
+    // Active nav highlight on scroll
+    const sections = ["servis","kisah","pelan","kenapa","sertai","faq","hubungi"];    
+    const navLinks = Array.from(document.querySelectorAll('header nav a'));
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        const id = e.target.id;
+        const link = navLinks.find(a=>a.getAttribute('href') === `#${id}`);
+        if(link){ link.classList.toggle('nav-active', e.isIntersecting && e.intersectionRatio > 0.6); }
+      })
+    }, {rootMargin:"0px 0px -60% 0px", threshold:[0, .6, 1]});
+    sections.forEach(id=>{ const el = document.getElementById(id); if(el) obs.observe(el); });
+
+    // Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Simple premium estimator (toy)
+    document.getElementById('calcBtn').addEventListener('click', ()=>{
+      const age = parseInt(document.getElementById('age').value||0,10);
+      const plan = document.getElementById('plan').value;
+      const cov = parseFloat(document.getElementById('coverage').value||0);
+      let factor = 0.0009; // fake factor
+      if(plan.includes('Medical')) factor = 0.0015;
+      if(plan.includes('Executive')) factor = 0.0022;
+      const prem = Math.max(50, Math.round((cov * factor) + age));
+      document.getElementById('prem').textContent = `RM ${prem.toLocaleString()}/bulan`;
+      document.getElementById('calcOut').classList.remove('hidden');
+    });
+
+    // UTM capture → hidden fields + WhatsApp link
+    const params = new URLSearchParams(location.search);
+    const leadForm = document.getElementById('leadForm');
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(k=>{
+      const f = leadForm.querySelector(`[name="${k}"]`);
+      if(f){ f.value = params.get(k) || ''; }
+    });
+    const wa = document.getElementById('waLink');
+    const baseWa = 'https://wa.me/60123456789?text=';
+    const msg = encodeURIComponent('Hi, saya berminat takaful.');
+    wa.href = baseWa + msg + (params.toString() ? '%0A%0AUTM:'+encodeURIComponent(' ?'+params.toString()) : '');
+
+    // FREE submission options (choose one):
+    // 1) Replace with Google Form POST using a lightweight fetch to Apps Script endpoint
+    leadForm.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const btn = leadForm.querySelector('button');
+      btn.disabled = true; btn.textContent = 'Menghantar…';
+      const data = Object.fromEntries(new FormData(leadForm).entries());
+      try{
+        // OPTION A (recommended free): send to Google Apps Script Web App
+        // const res = await fetch('YOUR_APPS_SCRIPT_WEBAPP_URL', {method:'POST', body: JSON.stringify(data)});
+        // if(!res.ok) throw new Error('Network');
+
+        // OPTION B (no-code): redirect to WhatsApp with prefill while you set up backend later
+        location.href = baseWa + encodeURIComponent(`Hi, saya ${data.name} (${data.phone}). Pelan: ${data.plan}. Nota: ${data.note||'-'}`);
+
+      } catch(err){
+        alert('Ralat penghantaran. Cuba WhatsApp terus.');
+      } finally{
+        btn.disabled = false; btn.textContent = 'Hantar';
+        document.getElementById('leadOut').classList.remove('hidden');
+      }
+    });
+
+    // Agent form (same handling)
+    document.getElementById('agentForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      document.getElementById('agentOut').classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>
