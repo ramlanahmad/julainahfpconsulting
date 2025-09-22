@@ -3,8 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lindungi Diri dan Keluarga Anda</title>
+  <title>Lindungi DIRI lindungi keluarga anda</title>
   <meta name="description" content="Takaful agency landing – hibah, medical card, education plan. Dapatkan konsultasi percuma."/>
+  <meta property="og:title" content="Takaful Agency — Lindungi Keluarga Anda" />
+  <meta property="og:description" content="Hibah, medical card, education plan. Konsultasi percuma." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://ramlanahmad.github.io/julianahfpconsulting/og-image.png" />
+  <meta property="og:url" content="https://ramlanahmad.github.io/julianahfpconsulting/" />
   <!-- Tailwind via CDN (for quick free deploy) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -18,7 +23,7 @@
   <!-- Header -->
   <header id="top" class="fixed inset-x-0 top-0 z-40 glass border-b border-slate-800">
     <div class="mx-auto max-w-6xl px-4 py-3 flex items-center gap-6">
-      <a href="#top" class="font-semibold tracking-tight">Your Takaful Agency</a>
+      <a href="#top" class="font-semibold tracking-tight">JULAINAH FP CONSULTING</a>
       <nav class="hidden md:flex items-center gap-5 text-sm">
         <a href="#servis" class="hover:text-cyan-300">Servis</a>
         <a href="#kisah" class="hover:text-cyan-300">Kisah Tuntutan</a>
@@ -162,7 +167,7 @@
   <section id="sertai" class="mx-auto max-w-6xl px-4 py-16">
     <div class="grid lg:grid-cols-2 gap-8 items-center">
       <div>
-        <h2 class="text-2xl md:text-3xl font-bold">Sertai Pasukan Agen</h2>
+        <h2 class="text-2xl md:text-3xl font-bold">Sertai Pasukan Kami</h2>
         <p class="mt-2 text-slate-300">Latihan, skrip jualan, lead support. Jana kerjaya bermakna sambil membantu keluarga lain.</p>
         <ul class="mt-4 text-sm list-disc list-inside text-slate-300">
           <li>Coaching mingguan</li>
@@ -211,7 +216,7 @@
         <p class="mt-2 text-slate-300">Isi borang, kami akan hubungi dalam 24 jam.
         </p>
         <div class="mt-6 text-sm text-slate-400">
-          <p>WhatsApp: <a class="text-cyan-300 underline" id="waLink" href="#">+60 12‑345 6789</a></p>
+          <p>WhatsApp: <a class="text-cyan-300 underline" id="waLink" href="#">+60 12‑211 6801</a></p>
           <p class="mt-1">Emel: <a class="text-cyan-300 underline" href="mailto:info@youragency.com">info@youragency.com</a></p>
         </div>
       </div>
@@ -246,11 +251,14 @@
   <!-- Footer -->
   <footer class="border-t border-slate-800">
     <div class="mx-auto max-w-6xl px-4 py-10 text-xs text-slate-400">
-      © <span id="yr"></span> JULAINAH FP CONSULTING • Semua hak terpelihara • <a href="#top" class="underline">Kembali ke atas</a>
+      © <span id="yr"></span> Julainah FP Consulting • Semua hak terpelihara • <a href="#top" class="underline">Kembali ke atas</a>
     </div>
   </footer>
 
   <script>
+    // Apps Script Web App URL (optional). Paste it here when ready.
+    const APPS_SCRIPT_URL = '';
+
     // Active nav highlight on scroll
     const sections = ["servis","kisah","pelan","kenapa","sertai","faq","hubungi"];    
     const navLinks = Array.from(document.querySelectorAll('header nav a'));
@@ -298,17 +306,22 @@
       const btn = leadForm.querySelector('button');
       btn.disabled = true; btn.textContent = 'Menghantar…';
       const data = Object.fromEntries(new FormData(leadForm).entries());
+      let sent = false;
       try{
-        // OPTION A (recommended free): send to Google Apps Script Web App
-        // const res = await fetch('YOUR_APPS_SCRIPT_WEBAPP_URL', {method:'POST', body: JSON.stringify(data)});
-        // if(!res.ok) throw new Error('Network');
-
-        // OPTION B (no-code): redirect to WhatsApp with prefill while you set up backend later
-        location.href = baseWa + encodeURIComponent(`Hi, saya ${data.name} (${data.phone}). Pelan: ${data.plan}. Nota: ${data.note||'-'}`);
-
+        if (APPS_SCRIPT_URL) {
+          const res = await fetch(APPS_SCRIPT_URL, {
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body: JSON.stringify(data)
+          });
+          if(!res.ok) throw new Error('Network');
+          sent = true;
+        }
       } catch(err){
-        alert('Ralat penghantaran. Cuba WhatsApp terus.');
+        console.warn('Apps Script submit failed:', err);
       } finally{
+        const msg = `Hi, saya ${data.name} (${data.phone}). Pelan: ${data.plan}. Nota: ${data.note||'-'}`;
+        window.open(baseWa + encodeURIComponent(msg), '_blank');
         btn.disabled = false; btn.textContent = 'Hantar';
         document.getElementById('leadOut').classList.remove('hidden');
       }
@@ -320,5 +333,6 @@
       document.getElementById('agentOut').classList.remove('hidden');
     });
   </script>
+  <a id="floatWA" href="#" class="fixed bottom-5 right-5 z-50 rounded-full bg-emerald-500 px-5 py-3 text-slate-900 font-semibold shadow-soft hover:bg-emerald-400">WhatsApp</a>
 </body>
 </html>
