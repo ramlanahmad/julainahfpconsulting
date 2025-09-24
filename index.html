@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lindungi DIRI lindungi keluarga anda</title>
+  <title>Takaful Agency — Lindungi Keluarga Anda</title>
   <meta name="description" content="Takaful agency landing – hibah, medical card, education plan. Dapatkan konsultasi percuma."/>
   <meta property="og:title" content="Takaful Agency — Lindungi Keluarga Anda" />
   <meta property="og:description" content="Hibah, medical card, education plan. Konsultasi percuma." />
@@ -12,6 +12,8 @@
   <meta property="og:url" content="https://ramlanahmad.github.io/julianahfpconsulting/" />
   <!-- Tailwind via CDN (for quick free deploy) -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Icons CDN (Feather) for lightweight inline icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
   <style>
     html{scroll-behavior:smooth}
     .nav-active{color:#22d3ee}
@@ -23,7 +25,7 @@
   <!-- Header -->
   <header id="top" class="fixed inset-x-0 top-0 z-40 glass border-b border-slate-800">
     <div class="mx-auto max-w-6xl px-4 py-3 flex items-center gap-6">
-      <a href="#top" class="font-semibold tracking-tight">JULAINAH FP CONSULTING</a>
+      <a href="#top" class="font-semibold tracking-tight">Your Takaful Agency</a>
       <nav class="hidden md:flex items-center gap-5 text-sm">
         <a href="#servis" class="hover:text-cyan-300">Servis</a>
         <a href="#kisah" class="hover:text-cyan-300">Kisah Tuntutan</a>
@@ -41,7 +43,7 @@
   <section class="relative bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,.25),transparent_35%),radial-gradient(circle_at_80%_0,rgba(168,85,247,.18),transparent_40%)]">
     <div class="mx-auto max-w-6xl px-4 pt-28 pb-16 grid lg:grid-cols-2 gap-8 items-center">
       <div>
-        <h1 class="text-3xl md:text-5xl font-bold leading-tight">Perlindungan Untuk Keluarga & Masa Depan Anda</h1>
+        <h1 class="text-3xl md:text-5xl font-bold leading-tight">Perlindungan Takaful Untuk Keluarga & Masa Depan Anda</h1>
         <p class="mt-4 text-slate-300">Hibah • Medical Card • Pendidikan • Perlindungan Pendapatan. Dapatkan cadangan pelan yang sesuai dalam 15 minit.</p>
         <div class="mt-6 flex gap-3">
           <a href="#hubungi" class="rounded-xl bg-cyan-500 px-5 py-3 font-semibold text-slate-900 hover:bg-cyan-400">Mula Sekarang</a>
@@ -75,24 +77,7 @@
   <section id="servis" class="mx-auto max-w-6xl px-4 py-16">
     <h2 class="text-2xl md:text-3xl font-bold">Servis Kami</h2>
     <p class="mt-2 text-slate-300">Pilih keperluan anda — kami sediakan cadangan pelan yang sesuai.</p>
-    <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-      <div class="rounded-2xl border border-slate-800 p-5 bg-slate-900/60">
-        <h3 class="font-semibold">Hibah Takaful</h3>
-        <p class="text-sm text-slate-400 mt-2">Wariskan kasih sayang, bukan beban hutang.</p>
-      </div>
-      <div class="rounded-2xl border border-slate-800 p-5 bg-slate-900/60">
-        <h3 class="font-semibold">Medical Card</h3>
-        <p class="text-sm text-slate-400 mt-2">Akses rawatan swasta tanpa risau bil.</p>
-      </div>
-      <div class="rounded-2xl border border-slate-800 p-5 bg-slate-900/60">
-        <h3 class="font-semibold">Pendidikan Anak</h3>
-        <p class="text-sm text-slate-400 mt-2">Rancang dana pendidikan sejak awal.</p>
-      </div>
-      <div class="rounded-2xl border border-slate-800 p-5 bg-slate-900/60">
-        <h3 class="font-semibold">Pendapatan & Bisnes</h3>
-        <p class="text-sm text-slate-400 mt-2">Lindungi aliran tunai keluarga & syarikat.</p>
-      </div>
-    </div>
+    <div id="servicesGrid" class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-4"></div>
   </section>
 
   <!-- Kisah tuntutan -->
@@ -167,7 +152,7 @@
   <section id="sertai" class="mx-auto max-w-6xl px-4 py-16">
     <div class="grid lg:grid-cols-2 gap-8 items-center">
       <div>
-        <h2 class="text-2xl md:text-3xl font-bold">Sertai Pasukan Kami</h2>
+        <h2 class="text-2xl md:text-3xl font-bold">Sertai Pasukan Agen</h2>
         <p class="mt-2 text-slate-300">Latihan, skrip jualan, lead support. Jana kerjaya bermakna sambil membantu keluarga lain.</p>
         <ul class="mt-4 text-sm list-disc list-inside text-slate-300">
           <li>Coaching mingguan</li>
@@ -216,7 +201,7 @@
         <p class="mt-2 text-slate-300">Isi borang, kami akan hubungi dalam 24 jam.
         </p>
         <div class="mt-6 text-sm text-slate-400">
-          <p>WhatsApp: <a class="text-cyan-300 underline" id="waLink" href="#">+60 12‑211 6801</a></p>
+          <p>WhatsApp: <a class="text-cyan-300 underline" id="waLink" href="#">+60 12‑345 6789</a></p>
           <p class="mt-1">Emel: <a class="text-cyan-300 underline" href="mailto:info@youragency.com">info@youragency.com</a></p>
         </div>
       </div>
@@ -251,13 +236,56 @@
   <!-- Footer -->
   <footer class="border-t border-slate-800">
     <div class="mx-auto max-w-6xl px-4 py-10 text-xs text-slate-400">
-      © <span id="yr"></span> Julainah FP Consulting • Semua hak terpelihara • <a href="#top" class="underline">Kembali ke atas</a>
+      © <span id="yr"></span> Your Takaful Agency • Semua hak terpelihara • <a href="#top" class="underline">Kembali ke atas</a>
     </div>
   </footer>
 
   <script>
     // Apps Script Web App URL (optional). Paste it here when ready.
     const APPS_SCRIPT_URL = '';
+
+    // === Dynamic content from site.json (services + contact) ===
+    const CONFIG_URL = 'site.json';
+    const utmParams = new URLSearchParams(location.search);
+    function buildWaHref(num, msg){
+      const base = 'https://wa.me/' + (num||'60123456789') + '?text=' + encodeURIComponent(msg||'Hi, saya berminat takaful.');
+      return base + (utmParams.toString() ? '%0A%0AUTM:'+encodeURIComponent(' ?'+utmParams.toString()) : '');
+    }
+    async function loadServicesFromJson(){
+      try{
+        const res = await fetch(CONFIG_URL, { cache: 'no-store' });
+        if(!res.ok) return;
+        const cfg = await res.json();
+        // Services
+        if(Array.isArray(cfg.services)){
+          const grid = document.getElementById('servicesGrid');
+          if(grid){
+            grid.innerHTML = cfg.services.map(s => `
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
+                <div class="relative h-36 w-full overflow-hidden">
+                  <img loading="lazy" src="${(s.image||'').replace(/"/g,'&quot;')||'https://images.unsplash.com/photo-1511895426328-dc8714191300?q=60&w=1200&auto=format&fit=crop'}" alt="${(s.title||'Servis').replace(/"/g,'&quot;')}" class="h-full w-full object-cover"/>
+                  <div class="absolute top-3 left-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900/70 ring-1 ring-slate-700">
+                    <i data-feather="${(s.icon||'star').replace(/"/g,'&quot;')}" class="w-5 h-5 text-cyan-300"></i>
+                  </div>
+                </div>
+                <div class="p-5">
+                  <h3 class="font-semibold">${(s.title||'Servis')}</h3>
+                  <p class="text-sm text-slate-400 mt-2">${(s.desc||'')}</p>
+                </div>
+              </div>`).join('');
+            if(window.feather){ window.feather.replace({ 'stroke-width': 1.8 }); }
+          }
+        }
+        // Contact
+        if(cfg.contact){
+          const wa = document.getElementById('waLink');
+          if(wa){ wa.href = buildWaHref(cfg.contact.phoneWa, cfg.contact.waPrefill||'Hi, saya berminat takaful.'); }
+          const emailLink = document.getElementById('emailLink');
+          if(emailLink && cfg.contact.email){ emailLink.textContent = cfg.contact.email; emailLink.href = 'mailto:'+cfg.contact.email; }
+        }
+      } catch(e){ console.warn('No site.json / failed to parse', e); }
+    }
+    loadServicesFromJson();
 
     // Active nav highlight on scroll
     const sections = ["servis","kisah","pelan","kenapa","sertai","faq","hubungi"];    
@@ -273,6 +301,9 @@
 
     // Year
     document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Render feather icons
+    if (window.feather) { window.feather.replace({ 'stroke-width': 1.8 }); }
 
     // Simple premium estimator (toy)
     document.getElementById('calcBtn').addEventListener('click', ()=>{
