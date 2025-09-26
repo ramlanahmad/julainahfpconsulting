@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Julainah FP Consulting — Lindungi Keluarga Anda</title>
+  <title>Takaful Agency — Lindungi Keluarga Anda</title>
   <meta name="description" content="Takaful agency landing – hibah, medical card, education plan. Dapatkan konsultasi percuma."/>
   <meta property="og:title" content="Takaful Agency — Lindungi Keluarga Anda" />
   <meta property="og:description" content="Hibah, medical card, education plan. Konsultasi percuma." />
@@ -25,7 +25,7 @@
   <!-- Header -->
   <header id="top" class="fixed inset-x-0 top-0 z-40 glass border-b border-slate-800">
     <div class="mx-auto max-w-6xl px-4 py-3 flex items-center gap-6">
-      <a href="#top" class="font-semibold tracking-tight">Julainah FP Consulting</a>
+      <a href="#top" class="font-semibold tracking-tight">Your Takaful Agency</a>
       <nav class="hidden md:flex items-center gap-5 text-sm">
         <a href="#servis" class="hover:text-cyan-300">Servis</a>
         <a href="#kisah" class="hover:text-cyan-300">Kisah Tuntutan</a>
@@ -33,9 +33,10 @@
         <a href="#kenapa" class="hover:text-cyan-300">Kenapa Kami</a>
         <a href="#sertai" class="hover:text-cyan-300">Sertai Agen</a>
         <a href="#faq" class="hover:text-cyan-300">FAQ</a>
-        <a href="#hubungi" class="hover:text-cyan-300">Hubungi</a>
-      </nav>
-      <a href="#hubungi" class="ml-auto inline-flex items-center rounded-xl bg-cyan-500 px-4 py-2 text-sm font-medium text-slate-900 hover:bg-cyan-400">Konsultasi Percuma</a>
+        <div class="ml-auto flex items-center gap-3">
+        <img id="headerLogo" src="" alt="Logo" class="h-9 w-auto object-contain rounded-md hidden"/>
+        <a id="ctaBtn" href="#hubungi" class="inline-flex items-center rounded-xl bg-cyan-500 px-4 py-2 text-sm font-medium text-slate-900 hover:bg-cyan-400">Konsultasi Percuma</a>
+      </div>
     </div>
   </header>
 
@@ -236,7 +237,7 @@
   <!-- Footer -->
   <footer class="border-t border-slate-800">
     <div class="mx-auto max-w-6xl px-4 py-10 text-xs text-slate-400">
-      © <span id="yr"></span> Julainah FP Consulting • Semua hak terpelihara • <a href="#top" class="underline">Kembali ke atas</a>
+      © <span id="yr"></span> Your Takaful Agency • Semua hak terpelihara • <a href="#top" class="underline">Kembali ke atas</a>
     </div>
   </footer>
 
@@ -275,6 +276,17 @@
               </div>`).join('');
             if(window.feather){ window.feather.replace({ 'stroke-width': 1.8 }); }
           }
+        }
+        // Branding (header logo)
+        if(cfg.branding && cfg.branding.logo){
+          const img = document.getElementById('headerLogo');
+          if(img){
+            img.src = cfg.branding.logo;
+            img.alt = (cfg.branding.logoAlt || cfg.agencyName || 'Logo');
+            img.classList.remove('hidden');
+          }
+          const cta = document.getElementById('ctaBtn');
+          if(cta){ cta.classList.add('hidden'); }
         }
         // Contact
         if(cfg.contact){
