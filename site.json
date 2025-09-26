@@ -1,4 +1,9 @@
 {
+  {
+  "branding": {
+    "logo": "./img/logo.jpg",
+    "logoAlt": "Julainah FP Consulting"
+  },
   "contact": {
     "phoneWa": "60123456789",
     "email": "hello@agencyanda.com",
